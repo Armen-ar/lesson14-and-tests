@@ -18,7 +18,7 @@ class YearsTestCase(SkyproTestCase):
             r'фильмы:\s[0-9]*\sшт\nсериалы:\s[0-9]*\sшт',
             r'%@Проверьте, что используете правильный формат выдачи')
 
-    def test_hours_value_is_correct(self):
+    def test_hours_value_is_correct_1(self):
         value = re.findall(r"\d+", main.result)[0]
         author_value = re.findall(r"\d+", solution.result)[0]
         self.assertEqual(
@@ -26,7 +26,7 @@ class YearsTestCase(SkyproTestCase):
             (r'%@Проверьте, что количество фильмов '
              'посчитано верно.'))
 
-    def test_hours_value_is_correct(self):
+    def test_hours_value_is_correct_2(self):
         value = re.findall(r"\d+", main.result)[1]
         author_value = re.findall(r"\d+", solution.result)[1]
         self.assertEqual(
