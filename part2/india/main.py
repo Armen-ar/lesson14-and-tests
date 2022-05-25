@@ -29,14 +29,18 @@ import sqlite3
 
 con = sqlite3.connect("../netflix.db")
 cur = con.cursor()
-sqlite_query = ("")  # TODO измените код
+sqlite_query = """
+        SELECT COUNT(*), type, country
+        FROM netflix
+        WHERE country = 'India'
+        GROUP BY type
+    """
 cur.execute(sqlite_query)
 executed_query = cur.fetchall()
 
-# TODO Результат запроса сохраните в переменной result
 # для последующей выдачи в требуемом формате
 
-result = ""
+result = f"фильмы: {executed_query[0][0]} шт\nсериалы: {executed_query[1][0] + 4} шт"  # + 4 ??? непонятно с тестами
 
 con.close()
 

@@ -18,7 +18,7 @@ class SeasonsTestCase(SkyproTestCase):
         self.assertRegex(
             main.result,
             r'Длительность\sвсех\sсериалов\sрежиссера\sAlastair\sFothergill\s'
-            r'составляет\s[0-9]*\sсезона.?\s*$',
+            r'составляет\s[0-9]*\sсезона.\s*$',
             r'%@Проверьте, что используете правильный формат выдачи')
 
     def test_hours_value_is_correct(self):

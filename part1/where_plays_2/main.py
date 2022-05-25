@@ -32,7 +32,12 @@ import prettytable
 
 con = sqlite3.connect("../netflix.db")
 cur = con.cursor()
-sqlite_query = ("")  # TODO измените код запроса
+sqlite_query = """
+                SELECT title, rating 
+                FROM netflix 
+                WHERE "cast" LIKE '%Joaquin Phoenix%'
+                AND rating = 'R' 
+                """
 result = cur.execute(sqlite_query)
 
 # не удаляйте код дальше, он нужен для вывода результата
@@ -40,7 +45,6 @@ result = cur.execute(sqlite_query)
 
 mytable = prettytable.from_db_cursor(result)
 mytable.max_width = 30
-
 
 if __name__ == '__main__':
     print(mytable)

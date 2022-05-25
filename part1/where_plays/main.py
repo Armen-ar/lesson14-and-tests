@@ -31,7 +31,12 @@ import prettytable
 
 con = sqlite3.connect("../netflix.db")
 cur = con.cursor()
-sqlite_query = ("")  # TODO измените код запроса
+sqlite_query = """
+                SELECT title 
+                FROM netflix 
+                WHERE 'type'='TV Show'
+                AND netflix.cast LIKE '%Renee Zellweger%'
+                """
 result = cur.execute(sqlite_query)
 
 # не удаляйте код дальше, он нужен для вывода результата

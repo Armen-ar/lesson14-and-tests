@@ -35,7 +35,12 @@ import prettytable
 
 con = sqlite3.connect("../netflix.db")
 cur = con.cursor()
-sqlite_query = ("")  # TODO измените код запроса
+sqlite_query = """
+                SELECT title, netflix.cast 
+                FROM netflix 
+                WHERE director = 'Guy Ritchie'
+                AND release_year < 2010 
+                """
 result = cur.execute(sqlite_query)
 
 # не удаляйте код дальше, он нужен для вывода результата
