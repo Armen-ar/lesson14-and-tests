@@ -32,7 +32,7 @@ cur = con.cursor()
 sqlite_query = """
         SELECT COUNT(*), type, country
         FROM netflix
-        WHERE country = 'India'
+        WHERE country LIKE '%India%'
         GROUP BY type
     """
 cur.execute(sqlite_query)
@@ -40,7 +40,7 @@ executed_query = cur.fetchall()
 
 # для последующей выдачи в требуемом формате
 
-result = f"фильмы: {executed_query[0][0]} шт\nсериалы: {executed_query[1][0] + 4} шт"  # + 4 ??? непонятно с тестами
+result = f"фильмы: {executed_query[0][0]} шт\nсериалы: {executed_query[1][0]} шт"  # + 4 ??? непонятно с тестами
 
 con.close()
 
