@@ -40,7 +40,7 @@ executed_query = cur.fetchall()
 
 # для последующей выдачи в требуемом формате
 
-result = f"фильмы: {executed_query[0][0]} шт\nсериалы: {executed_query[1][0]} шт"  # + 4 ??? непонятно с тестами
+result = f"фильмы: {executed_query[0][0]} шт\nсериалы: {executed_query[1][0]} шт"
 
 con.close()
 

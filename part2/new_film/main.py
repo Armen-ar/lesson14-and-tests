@@ -25,7 +25,7 @@ import sqlite3
 con = sqlite3.connect("../netflix.db")
 cur = con.cursor()
 sqlite_query = """
-        SELECT title, MAX(date_added)
+        SELECT title, MAX(date_added), type 
         FROM netflix
     """
 cur.execute(sqlite_query)

@@ -36,7 +36,9 @@ import prettytable
 
 con = sqlite3.connect("../netflix.db")
 cur = con.cursor()
-sqlite_query = "SELECT DISTINCT director FROM netflix"
+sqlite_query = """
+            SELECT DISTINCT director
+            FROM netflix"""
 result = cur.execute(sqlite_query)
 
 # не удаляйте код дальше, он нужен для вывода результата
